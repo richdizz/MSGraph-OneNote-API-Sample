@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model List<OneNoteSample.Models.Section>
+
+<form method="post" action="/">
+    <h2>Create OneNote Page</h2>
+    <p>Use this form to select a notebook section to create a super-cool page!</p>
+    <div class="form-group">
+        <label for="id">Section</label>
+        <select id="id" name="id" class="form-control">
+            @foreach (var s in Model)
+            {
+                <option value="@s.id">@s.name</option>
+            }
+        </select>
+    </div>
+    <input type="submit" name="btnSubmit" id="btnSubmit" value="Create Page" class="btn btn-primary" />
+</form>
